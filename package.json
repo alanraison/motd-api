@@ -1,0 +1,24 @@
+{
+  "name": "motd-api",
+  "version": "1.0.0",
+  "description": "GraphQL Proxy for MOTD API in K8s API Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanraison/motd-api.git"
+  },
+  "author": "Alan Raison <alan.raison@noreply.github.com>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/alanraison/motd-api/issues"
+  },
+  "homepage": "https://github.com/alanraison/motd-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.6.0"
+  }
+}
