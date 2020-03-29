@@ -10,7 +10,7 @@ const pino = require('express-pino-logger');
 async function getOpenApiSpec(token) {
   const res = await fetch(`${process.env.BASE_URL}/openapi/v2`, {
     headers: token && {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
   if (res.status != 200) {
@@ -27,12 +27,12 @@ async function getOpenApiSpec(token) {
 function main(token) {
   return async function(oas) {
     const app = express();
-    const { schema } = await createGraphQLSchema(oas, {
+    const { schema, report } = await createGraphQLSchema(oas, {
       viewer: false,
       baseUrl: process.env.BASE_URL,
       requestOptions: token && {
         auth: {
-          bearer: '',
+          bearer: token,
         },
       },
     });

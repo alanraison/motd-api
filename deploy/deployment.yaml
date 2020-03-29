@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: motd-api
+  namespace: motd
+  labels:
+    run: motd-api
+spec:
+  selector:
+    matchLabels:
+      run: motd-api
+  template:
+    metadata:
+      labels:
+        run: motd-api
+    spec:
+      containers:
+      - image: motd-api
+        imagePullPolicy: Never
+        name: motd-api
+        ports:
+        - containerPort: 4000
+          protocol: TCP
+      serviceAccountName: motd-api

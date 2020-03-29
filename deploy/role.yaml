@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: motd-api-role
+  namespace: motd
+rules:
+- apiGroups:
+  - motd.alanraison.github.io
+  resources:
+  - MotdSource
+  verbs: ['*']
+- apiGroups:
+  - core
+  resources: 
+  - secret
+  verbs:
+  - create
+  - delete
+  - list
+  - patch
+  - update
+  - watch
